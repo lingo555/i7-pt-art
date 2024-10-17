@@ -48,11 +48,13 @@ const eventData = [
 function csvToArray(str) {
   // ヘッダー行の値配列を取得
   console.log(str);
-  const headers = str.split('\r\n')[0].split(',');
+  const headers = str.split('\n')[0].split(',');
   console.log(headers);
   // 各行のテキスト配列を取得
   const rows = str.slice(str.indexOf('\n') + 1).split(/\n|\r\n|\r/);
+  rows.pop();
   console.log(rows[1]);
+  console.log(rows.slice(-1)[0]);
   // 各行を配列に変換
   const arr = rows.map(function (row) {
     const values = row.split(',');
