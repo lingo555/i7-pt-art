@@ -14,7 +14,7 @@ const resetButton = document.getElementById('reset');
 
 // ボタンデータ
 const csv = new XMLHttpRequest();
-csv.open("GET", "buttondata.csv", false);
+csv.open("GET", "https://github.com/lingo555/i7-pt-art/blob/main/buttondata.csv", false);
 csv.send();
 const buttonData = csvToArray(csv);
 
