@@ -47,11 +47,12 @@ const eventData = [
 // csvから連想配列に変換する関数
 function csvToArray(str) {
   // ヘッダー行の値配列を取得
-  const headers = str.split('\n')[0].split(',');
-
+  console.log(str);
+  const headers = str.split('\r\n')[0].split(',');
+  console.log(headers);
   // 各行のテキスト配列を取得
   const rows = str.slice(str.indexOf('\n') + 1).split(/\n|\r\n|\r/);
- 
+  console.log(rows[1]);
   // 各行を配列に変換
   const arr = rows.map(function (row) {
     const values = row.split(',');
