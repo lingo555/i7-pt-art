@@ -46,9 +46,8 @@ const eventData = [
 
 // csvから連想配列に変換する関数
 function csvToArray(str) {
-  console.log(str);
   // ヘッダー行の値配列を取得
-  const headers = str.split('\r\n')[0].split(',');
+  const headers = str.split('\n')[0].split(',');
 
   // 各行のテキスト配列を取得
   const rows = str.slice(str.indexOf('\n') + 1).split(/\n|\r\n|\r/);
@@ -58,7 +57,7 @@ function csvToArray(str) {
     const values = row.split(',');
     const el = headers.reduce(
       function (obj, header, i) {
-        const v = values[i].replaceAll('\"','')
+        const v = values[i];
           obj[header] = v;
         return obj;
       }, {}
