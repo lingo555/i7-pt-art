@@ -46,6 +46,7 @@ const eventData = [
 
 // csvから連想配列に変換する関数
 function csvToArray(str) {
+  console.log(str);
   // ヘッダー行の値配列を取得
   const headers = str.split('\n')[0].split(',');
 
