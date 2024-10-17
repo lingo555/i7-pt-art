@@ -16,6 +16,7 @@ const resetButton = document.getElementById('reset');
 const csv = new XMLHttpRequest();
 csv.open("GET", "button.csv", true);
 csv.send();
+console.log(csv);
 const buttonData = csvToArray(csv.responseText);
 
 // 特効枚数と倍率の配列
