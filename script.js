@@ -25,7 +25,6 @@ const eventcsv = new XMLHttpRequest();
 eventcsv.open("GET", "eventdata.csv", false);
 eventcsv.send();
 const eventData = csvToArray2(eventcsv.responseText);
-console.log(eventData);
 
 // csvから連想配列に変換する関数
 function csvToArray1(str) {
