@@ -21,6 +21,10 @@ console.log(csv.responseText);
 console.log(csv.response);
 const buttonData = csvToArray(csv.responseText);
 
+fetch("button.csv")
+        .then(response => response.text())
+        .then(data => console.log(data));
+
 // 特効枚数と倍率の配列
 const eventData = [
   [['30%','0%','0%','0%','0%'],
