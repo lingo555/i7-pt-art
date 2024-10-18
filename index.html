@@ -41,10 +41,10 @@
     <div class="adjust-area">
       <div class="adjust-list">
         特訓MAX枚数：
-        <label><input type="radio" name="adjust1" content="0" value="0">0</label>
-        <label><input type="radio" name="adjust1" content="1" value="40">1</label>
-        <label><input type="radio" name="adjust1" content="2" value="80">2</label>
-        <label><input type="radio" name="adjust1" content="3" value="120" checked>3</label>
+        <label><input type="radio" name="adjust1" value="0">0</label>
+        <label><input type="radio" name="adjust1" value="40">1</label>
+        <label><input type="radio" name="adjust1" value="80">2</label>
+        <label><input type="radio" name="adjust1" value="120" checked>3</label>
       </div>
       <div class="adjust-list">
         SSR以上枚数：
@@ -65,15 +65,16 @@
         <label><input type="radio" name="adjust3" value="100" checked>300</label>
       </div>
     </div>
-    <input type="reset" id="reset" value="リセット" />
+    <label><input type="reset" id="reset" value="リセット" /></label>
+    <label><input type="button" id="cancel" value="取り消し" /></label>
    </form>
  
-  <div class="button-area">
-  </div>
-
   <div class="log-area">
     選択中：
     <ul id="log"></ul>
+  </div>
+
+  <div class="button-area">
   </div>
 
   <script src="script.js"></script>
