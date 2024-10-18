@@ -127,6 +127,7 @@ function filterButtons() {
   const checkedTypes = Array.from(filterCheckboxes)
     .filter(checkbox => checkbox.checked)
     .map(checkbox => checkbox.value);
+  checkedTypes.push('AUTO');
   const event1N = Math.min(6,parseInt(event1Input.value));  //特効枚数
   const event2N = Math.min(6,parseInt(event2Input.value));  //準特効枚数
   const eventlist = eventData[event1N][event2N];
@@ -169,7 +170,6 @@ function oneCancel() {
   if (lognum == 0) { return false; };
   const lastLog = logList.lastElementChild;
   const lastValue = parseInt(lastLog.textContent.split('P')[0]);
-  console.log(lastValue);
   lastLog.remove();
   
   // 残り値を更新
