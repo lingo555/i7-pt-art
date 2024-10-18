@@ -24,35 +24,11 @@ const buttonData = csvToArray1(buttoncsv.responseText);
 
 // 特効枚数と倍率の配列
 const eventcsv = new XMLHttpRequest();
-buttoncsv.open("GET", "eventdata.csv", false);
-buttoncsv.send();
-console.log(buttoncsv);
-console.log(buttoncsv.responseText);
-
-const eventData = [
-  [['30%','0%','0%','0%','0%'],
-['30%','0%','0%','0%','0%'],
-['30%','50%','60%','0%','0%'],
-['30%','50%','60%','0%','0%'],
-['30%','50%','60%','80%','0%'],
-['30%','50%','60%','80%','100%'],
-['30%','50%','60%','80%','100%']],
-  [['30%','50%','60%','0%','0%'],
-['30%','50%','60%','80%','0%'],
-['30%','50%','60%','80%','100%'],
-['30%','50%','60%','80%','100%'],
-['30%','50%','60%','80%','100%'],
-['30%','50%','60%','80%','100%'],
-['30%','50%','60%','80%','100%']],
-  [['30%','50%','60%','80%','100%'],
-['30%','50%','60%','0%','100%'],
-['30%','50%','60%','80%','100%'],
-['30%','50%','60%','80%','100%'],
-['30%','50%','60%','80%','100%'],
-['30%','50%','60%','80%','100%'],
-['30%','50%','60%','80%','100%'],
-['30%','50%','60%','80%','100%']]
-];
+eventcsv.open("GET", "eventdata.csv", false);
+eventcsv.send();
+//console.log(buttoncsv);
+//console.log(buttoncsv.responseText);
+const eventData = csvToArray2(eventcsv.responseText);
 
 // csvから連想配列に変換する関数
 function csvToArray1(str) {
@@ -73,9 +49,27 @@ function csvToArray1(str) {
     );
     return el;
   });
-  
   return arr;
-} 
+};
+
+// csvから3次元配列に変換する関数
+function csvToArray2(str) {
+  // 各行のテキスト配列を取得
+  const rows = str.split(/\n|\r\n|\r/);
+  rows.pop();
+  // 3次元配列を作る
+  let arr3 = [];
+  let k = 0;
+  for(var i=0; i<7; i++){
+    arr3[i] = [];
+    for(var j=0; j<7; j++){
+      arr3[i][j] = rows[k].split(',');
+      k++;
+    }
+  };
+  //console.log(arr3);
+  return arr3;
+};
 
 // ボタンを生成する関数
 function createButtons(data) {
