@@ -15,7 +15,7 @@ const resetButton = document.getElementById('reset');
 // ボタンデータ
 const csv = new XMLHttpRequest();
 csv.open("GET", "button.csv", true);
-csv.send();
+//csv.send();
 console.log(csv);
 console.log(csv.responseText);
 console.log(csv.response);
