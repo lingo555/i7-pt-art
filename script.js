@@ -13,16 +13,22 @@ const logList = document.getElementById('log');
 const resetButton = document.getElementById('reset');
 
 // ボタンデータ
-const csv = new XMLHttpRequest();
-csv.open("GET", "button.csv", false);
-csv.send();
-const buttonData = csvToArray(csv.responseText);
+const buttoncsv = new XMLHttpRequest();
+buttoncsv.open("GET", "button.csv", false);
+buttoncsv.send();
+const buttonData = csvToArray1(buttoncsv.responseText);
 
 //fetch("button.csv")
         //.then(response => response.text())
         //.then(data => console.log(data));
 
 // 特効枚数と倍率の配列
+const eventcsv = new XMLHttpRequest();
+buttoncsv.open("GET", "eventdata.csv", false);
+buttoncsv.send();
+console.log(buttoncsv);
+console.log(buttoncsv.responseText);
+
 const eventData = [
   [['30%','0%','0%','0%','0%'],
 ['30%','0%','0%','0%','0%'],
@@ -49,7 +55,7 @@ const eventData = [
 ];
 
 // csvから連想配列に変換する関数
-function csvToArray(str) {
+function csvToArray1(str) {
   // ヘッダー行の値配列を取得
   const headers = str.split('\n')[0].split(',');
   // 各行のテキスト配列を取得
