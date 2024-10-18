@@ -23,6 +23,7 @@ async function readcsv(filename) {
   return csv;
 };
 const buttoncsv = readcsv("button.csv");
+console.log(buttoncsv);
 const buttonData = csvToArray1(buttoncsv);
 console.log(buttonData);
 
