@@ -20,6 +20,7 @@ const resetButton = document.getElementById('reset');
 async function readcsv(filename) {
   const data = await fetch(filename);
   const csv = await data.text();
+  console.log(csv);
   return csv;
 };
 const buttoncsv = readcsv("button.csv");
