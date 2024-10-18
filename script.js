@@ -20,6 +20,7 @@ const resetButton = document.getElementById('reset');
 const data1 = await fetch("button.csv");
 const buttoncsv = await data1.text();
 const buttonData = csvToArray1(buttoncsv);
+console.log(buttonData);
 
 //fetch("button.csv")
         //.then(response => response.text())
@@ -32,6 +33,7 @@ eventcsv.send();
 //console.log(buttoncsv);
 //console.log(buttoncsv.responseText);
 const eventData = csvToArray2(eventcsv.responseText);
+console.log(eventData);
 
 // csvから連想配列に変換する関数
 function csvToArray1(str) {
