@@ -13,10 +13,13 @@ const logList = document.getElementById('log');
 const resetButton = document.getElementById('reset');
 
 // ボタンデータ
-const buttoncsv = new XMLHttpRequest();
-buttoncsv.open("GET", "button.csv", false);
-buttoncsv.send();
-const buttonData = csvToArray1(buttoncsv.responseText);
+//const buttoncsv = new XMLHttpRequest();
+//buttoncsv.open("GET", "button.csv", false);
+//buttoncsv.send();
+//const buttonData = csvToArray1(buttoncsv.responseText);
+const data1 = await fetch("button.csv");
+const buttoncsv = await data1.text();
+const buttonData = csvToArray1(buttoncsv);
 
 //fetch("button.csv")
         //.then(response => response.text())
