@@ -16,15 +16,11 @@ const resetButton = document.getElementById('reset');
 const csv = new XMLHttpRequest();
 csv.open("GET", "button.csv", false);
 csv.send();
-console.log(csv);
-console.log(csv.responseText);
-console.log(csv.response);
 const buttonData = csvToArray(csv.responseText);
 
-fetch("button.csv")
-        .then(response => response.text())
-        .then(data => console.log(data));
-console.log(data);
+//fetch("button.csv")
+        //.then(response => response.text())
+        //.then(data => console.log(data));
 
 // 特効枚数と倍率の配列
 const eventData = [
@@ -55,14 +51,10 @@ const eventData = [
 // csvから連想配列に変換する関数
 function csvToArray(str) {
   // ヘッダー行の値配列を取得
-  console.log(str);
   const headers = str.split('\n')[0].split(',');
-  console.log(headers);
   // 各行のテキスト配列を取得
   const rows = str.slice(str.indexOf('\n') + 1).split(/\n|\r\n|\r/);
   rows.pop();
-  console.log(rows[1]);
-  console.log(rows.slice(-1)[0]);
   // 各行を配列に変換
   const arr = rows.map(function (row) {
     const values = row.split(',');
