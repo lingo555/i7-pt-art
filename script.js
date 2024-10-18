@@ -11,33 +11,19 @@ const adjustInput2 = document.getElementById('adjust2');
 const buttonArea = document.querySelector('.button-area');
 const logList = document.getElementById('log');
 const resetButton = document.getElementById('reset');
+const cancelButton = document.getElementById('cancel');
 
 // ボタンデータ
-//const buttoncsv = new XMLHttpRequest();
-//buttoncsv.open("GET", "button.csv", false);
-//buttoncsv.send();
-//const buttonData = csvToArray1(buttoncsv.responseText);
-async function readcsv(filename) {
-  const data = await fetch(filename);
-  const csv = await data.text();
-  console.log(csv);
-  return csv;
-};
-const buttoncsv = readcsv("button.csv");
-console.log(buttoncsv);
-const buttonData = csvToArray1(buttoncsv);
-console.log(buttonData);
+const buttoncsv = new XMLHttpRequest();
+buttoncsv.open("GET", "button.csv", false);
+buttoncsv.send();
+const buttonData = csvToArray1(buttoncsv.responseText);
 
-//fetch("button.csv")
-        //.then(response => response.text())
-        //.then(data => console.log(data));
 
 // 特効枚数と倍率の配列
 const eventcsv = new XMLHttpRequest();
 eventcsv.open("GET", "eventdata.csv", false);
 eventcsv.send();
-//console.log(buttoncsv);
-//console.log(buttoncsv.responseText);
 const eventData = csvToArray2(eventcsv.responseText);
 console.log(eventData);
 
@@ -97,7 +83,7 @@ function createButtons(data) {
     button.addEventListener('click', handleClick);
     buttonArea.appendChild(button);
   });
-}
+};
 
 // ボタンクリック時の処理
 function handleClick(event) {
@@ -127,7 +113,7 @@ function handleClick(event) {
   const newLogItem = document.createElement('li');
   newLogItem.innerText = `${buttonValue}Pt（${buttonStar}、${buttonType}、特効${buttonEvent}、特訓MAX${adjustValue1}枚、SSR以上${adjustValue2}枚、レベル${adjustValue3}）`;
   logList.appendChild(newLogItem);
-}
+};
 
 // 残り値を計算する関数
 function calculateRemaining() {
@@ -135,7 +121,7 @@ function calculateRemaining() {
   const current = parseInt(currentInput.value);
   const remainingValue = target - current;
   remaining.textContent = `${remainingValue}`;
-}
+};
 
 // フィルター処理を行う関数
 function filterButtons() {
@@ -157,14 +143,16 @@ function filterButtons() {
     const isEvent = eventlist.includes(button.dataset.eventup);  //特効枚数から見て、倍率が達成可能か
     button.style.display = isSelect && isLE && isEvent &&(!align ||(align && isAligned)) ? 'inline-block' : 'none';
   });
-  
-}
+};
 
 // 調整値を適用する関数
 function adjustValues() {
+  // 3種調整値を取得
   const adjustValue1 = parseInt(document.querySelector('input[name="adjust1"]:checked').value);
   const adjustValue2 = parseInt(document.querySelector('input[name="adjust2"]:checked').value);
   const adjustValue3 = parseInt(document.querySelector('input[name="adjust3"]:checked').value);
+  
+  // ボタンの値を変更
   const allButtons = document.querySelectorAll('.button-area button');
   allButtons.forEach(button => {
     const defultValue = parseInt(button.dataset.defvalue);
@@ -173,14 +161,33 @@ function adjustValues() {
     button.innerHTML = `${newValue}Pt<br>${button.dataset.star}、${button.dataset.level}<br>${button.dataset.type}、特効${button.dataset.eventup}`;
   });
   filterButtons(); // ボタンの表示/非表示を更新
-}
+};
+
+// 取り消し処理
+function oneCancel() {
+  // ログの数を取得
+  const lognum = logList.childElementCount;
+  if (lognum == 0) { return false; };
+  const lastLog = logList.lastElementChild;
+  const lastValue = parseInt(lastLog.textContent.split('P')[0]);
+  console.log(lastValue);
+  lastLog.remove();
+  
+  // 残り値を更新
+  const remainingValue = parseInt(remaining.textContent);
+  const newRemaining = remainingValue + lastValue;
+  remaining.textContent = `${newRemaining}`;
+  
+  // ボタンの表示/非表示を更新
+  filterButtons();
+};
 
 // 初期化処理
 function init() {
   createButtons(buttonData);
   calculateRemaining();
   logList.innerHTML = '';
-}
+};
 
 // イベントリスナーの設定
 targetInput.addEventListener('input', calculateRemaining);
@@ -190,5 +197,6 @@ event2Input.addEventListener('input', filterButtons);
 filterCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterButtons));
 adjustInput.forEach(number => number.addEventListener('input', adjustValues));
 resetButton.addEventListener('click', init);
+cancelButton.addEventListener('click', oneCancel);
 
 init();
