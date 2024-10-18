@@ -17,8 +17,12 @@ const resetButton = document.getElementById('reset');
 //buttoncsv.open("GET", "button.csv", false);
 //buttoncsv.send();
 //const buttonData = csvToArray1(buttoncsv.responseText);
-const data1 = await fetch("button.csv");
-const buttoncsv = await data1.text();
+async function readcsv(filename) {
+  const data = await fetch(filename);
+  const csv = await data.text();
+  return csv;
+};
+const buttoncsv = readcsv("button.csv");
 const buttonData = csvToArray1(buttoncsv);
 console.log(buttonData);
 
