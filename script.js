@@ -185,6 +185,7 @@ function oneCancel() {
 function init() {
   createButtons(buttonData);
   calculateRemaining();
+  filterButtons();
   logList.innerHTML = '';
 };
 
