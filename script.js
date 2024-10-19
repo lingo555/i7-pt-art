@@ -97,9 +97,12 @@ function handleClick(event) {
   const buttonEvent = clickedButton.dataset.eventup;
   
   // 調整値を取得
-  const adjustValue1 = document.querySelector('input[name="adjust1"]:checked').parentNode.textContent;
-  const adjustValue2 = document.querySelector('input[name="adjust2"]:checked').parentNode.textContent;
-  const adjustValue3 = document.querySelector('input[name="adjust3"]:checked').parentNode.textContent;
+  const adjustValue1 = document.querySelector('input[name="adjust1"]:checked')
+    .parentNode.textContent.split('枚')[0];
+  const adjustValue2 = document.querySelector('input[name="adjust2"]:checked')
+    .parentNode.textContent.split('枚')[0];
+  const adjustValue3 = document.querySelector('input[name="adjust3"]:checked')
+    .parentNode.textContent.split('+')[0];
 
   // 残り値を更新
   const remainingValue = parseInt(remaining.textContent);
@@ -111,7 +114,7 @@ function handleClick(event) {
   
    // ログを追加
   const newLogItem = document.createElement('li');
-  newLogItem.innerText = `${buttonValue}Pt（${buttonStar}、${buttonType}、特効${buttonEvent}、特訓MAX${adjustValue1}枚、SSR以上${adjustValue2}枚、レベル${adjustValue3}）`;
+  newLogItem.innerText = `${buttonValue}Pt（${buttonStar}、${buttonType}、特効${buttonEvent}、特訓MAX${adjustValue1}枚、SSR以上${adjustValue2}枚、${adjustValue3}）`;
   logList.appendChild(newLogItem);
 };
 
