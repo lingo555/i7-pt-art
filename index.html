@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <title>アイナナPt調整ツール</title>
   <meta charset="utf-8">
@@ -14,36 +13,32 @@
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
-
 <body>
   <div class="center-body">
     <h1>アイナナPt調整ツール</h1>
     <div class="option">
-      <div class="input-area">
-        <div class="input-text">目標Pt
-          <input type="number" id="target" value=5000>
+      <div class="input">
+        <div class="input-area">
+          <div class="input-text"><span>目標Pt</span>
+            <input type="number" id="target" value=5000>
+          </div>
+          <div class="input-text"><span>現在Pt</span>
+            <input type="number" id="current" value=345>
+          </div>
+          <div class="input-text"><span>最大特効枚数</span>
+            <input type="number" id="event1" value=1 min=0 max=6>
+          </div>
+          <div class="input-text"><span>最大準特効枚数</span>
+            <input type="number" id="event2" value=1 min=0 max=6>
+          </div>
         </div>
-        <div class="input-text">現在Pt
-          <input type="number" id="current" value=345>
-        </div>
-        <div class="input-text">最大特効枚数　
-          <input type="number" id="event1" value=1 min=0 max=6>
-        </div>
-        <div class="input-text">最大準特効枚数
-          <input type="number" id="event2" value=1 min=0 max=6>
-        </div>
-      </div>
-      <div class="remain-area">残りPt：<span id="remaining"></span></div>
-      <form name="settings">
         <div class="filter-area">
-          <label><input type="checkbox" id="align">下1桁を合わせる</label>
-
           <div class="category-filter">
             <label class="check-label"><input type="checkbox" value="放置" checked> 放置</label>
             <label class="check-label"><input type="checkbox" value="FC" checked> FC</label>
             <label class="check-label"><input type="checkbox" value="オート" checked> オート</label>
           </div>
-
+          <hr>
           <div class="category-filter">
             <label class="check-label"><input type="checkbox" value="★1" checked> ★1</label>
             <label class="check-label"><input type="checkbox" value="★2" checked> ★2</label>
@@ -51,49 +46,50 @@
             <label class="check-label"><input type="checkbox" value="★4" checked> ★4</label>
             <label class="check-label"><input type="checkbox" value="★5" checked> ★5</label>
           </div>
+          <hr>
+          <div class="category-filter"><label class="check-label"><input type="checkbox" id="align">下1桁を合わせる</label></div>
         </div>
-
-        <div class="adjust-area">
-          <div class="adjust-list">
-            <span>特訓MAX</span>
-            <label class="radio-label"><input type="radio" name="adjust1" value="0">0枚<br><span>+ 0Pt</span></label>
-            <label class="radio-label"><input type="radio" name="adjust1" value="40">1枚<br><span>+ 40Pt</span></label>
-            <label class="radio-label"><input type="radio" name="adjust1" value="80">2枚<br><span>+ 80Pt</span></label>
-            <label class="radio-label"><input type="radio" name="adjust1" value="120">3枚<br><span>+ 120Pt</span></label>
-          </div>
-          <div class="adjust-list">
-            <span>SSR以上</span>
-            <label class="radio-label"><input type="radio" name="adjust2" value="0">0枚<br><span>+ 0Pt</span></label>
-            <label class="radio-label"><input type="radio" name="adjust2" value="10">1枚<br><span>+ 10Pt</span></label>
-            <label class="radio-label"><input type="radio" name="adjust2" value="20">2枚<br><span>+ 20Pt</span></label>
-            <label class="radio-label"><input type="radio" name="adjust2" value="30">3枚<br><span>+ 30Pt</span></label>
-            <label class="radio-label"><input type="radio" name="adjust2" value="40">4枚<br><span>+ 40Pt</span></label>
-            <label class="radio-label"><input type="radio" name="adjust2" value="50">5枚<br><span>+ 50Pt</span></label>
-          </div>
-          <div class="adjust-list">
-            <span>合計Lv</span>
-            <label class="radio-label"><input type="radio" name="adjust3" value="0">Lv0<br><span>+ 0Pt</span></label>
-            <label class="radio-label"><input type="radio" name="adjust3" value="20">Lv100<br><span>+ 20Pt</span></label>
-            <label class="radio-label"><input type="radio" name="adjust3" value="40">Lv150<br><span>+ 40Pt</span></label>
-            <label class="radio-label"><input type="radio" name="adjust3" value="60">Lv200<br><span>+ 60Pt</span></label>
-            <label class="radio-label"><input type="radio" name="adjust3" value="80">Lv250<br><span>+ 80Pt</span></label>
-            <label class="radio-label"><input type="radio" name="adjust3" value="100">Lv300<br><span>+ 100Pt</span></label>
-          </div>
+      </div>
+      <div class="output">
+        <div class="remain-area">目標まで <span id="remaining"></span> Pt</div>
+        選択中：
+        <div class="log-area">
+          <ul id="log"></ul>
         </div>
-
-      </form>
-      <input type="button" id="reset" value="リセット" />
-      <input type="button" id="cancel" value="取り消し" />
-
+      </div>
     </div>
-    <div class="log-area">
-      選択中：
-      <ul id="log"></ul>
-    </div>
-
-    <div class="button-area">
-    </div>
+    <form name="settings">
+      <div class="adjust-area">
+        <div class="adjust-list">
+          <span>特訓MAX</span>
+          <label class="radio-label"><input type="radio" name="adjust1" value="0">0枚<br><span>+ 0Pt</span></label>
+          <label class="radio-label"><input type="radio" name="adjust1" value="40">1枚<br><span>+ 40Pt</span></label>
+          <label class="radio-label"><input type="radio" name="adjust1" value="80">2枚<br><span>+ 80Pt</span></label>
+          <label class="radio-label"><input type="radio" name="adjust1" value="120" checked>3枚<br><span>+ 120Pt</span></label>
+        </div>
+        <div class="adjust-list">
+          <span>SSR以上</span>
+          <label class="radio-label"><input type="radio" name="adjust2" value="0">0枚<br><span>+ 0Pt</span></label>
+          <label class="radio-label"><input type="radio" name="adjust2" value="10">1枚<br><span>+ 10Pt</span></label>
+          <label class="radio-label"><input type="radio" name="adjust2" value="20">2枚<br><span>+ 20Pt</span></label>
+          <label class="radio-label"><input type="radio" name="adjust2" value="30">3枚<br><span>+ 30Pt</span></label>
+          <label class="radio-label"><input type="radio" name="adjust2" value="40">4枚<br><span>+ 40Pt</span></label>
+          <label class="radio-label"><input type="radio" name="adjust2" value="50" checked>5枚<br><span>+ 50Pt</span></label>
+        </div>
+        <div class="adjust-list">
+          <span>合計Lv</span>
+          <label class="radio-label"><input type="radio" name="adjust3" value="0">Lv0<br><span>+ 0Pt</span></label>
+          <label class="radio-label"><input type="radio" name="adjust3" value="20">Lv100<br><span>+ 20Pt</span></label>
+          <label class="radio-label"><input type="radio" name="adjust3" value="40">Lv150<br><span>+ 40Pt</span></label>
+          <label class="radio-label"><input type="radio" name="adjust3" value="60">Lv200<br><span>+ 60Pt</span></label>
+          <label class="radio-label"><input type="radio" name="adjust3" value="80">Lv250<br><span>+ 80Pt</span></label>
+          <label class="radio-label"><input type="radio" name="adjust3" value="100" checked>Lv300<br><span>+ 100Pt</span></label>
+        </div>
+      </div>
+    </form>
+    <input type="button" id="reset" value="リセット" />
+    <input type="button" id="cancel" value="取り消し" />
+    <div class="button-area"></div>
   </div>
 </body>
-
 </html>
