@@ -73,7 +73,7 @@ function createButtons(data) {
   buttonArea.innerHTML = '';
   data.forEach(item => {
     const button = document.createElement('button');
-    button.innerHTML = `${item.value}Pt<br>${item.star}、${item.level}<br>${item.type}、特効${item.eventup}`;
+    button.innerHTML = `${item.value}Pt<br><span>${item.star}、${item.level}<br>${item.type}、特効${item.eventup}</span>`;
     button.dataset.value = item.value;
     button.dataset.defvalue = item.defvalue;
     button.dataset.type = item.type;
@@ -159,7 +159,7 @@ function adjustValues() {
     const defultValue = parseInt(button.dataset.defvalue);
     const newValue = defultValue + adjustValue1 + adjustValue2 + adjustValue3;
     button.dataset.value = newValue;
-    button.innerHTML = `${newValue}Pt<br>${button.dataset.star}、${button.dataset.level}<br>${button.dataset.type}、特効${button.dataset.eventup}`;
+    button.innerHTML = `${newValue}Pt<br><span>${button.dataset.star}、${button.dataset.level}<br>${button.dataset.type}、特効${button.dataset.eventup}</span>`;
   });
   filterButtons(); // ボタンの表示/非表示を更新
 };
