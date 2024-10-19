@@ -17,6 +17,7 @@ const cancelButton = document.getElementById('cancel');
 const buttoncsv = new XMLHttpRequest();
 buttoncsv.open("GET", "button.csv", false);
 buttoncsv.send();
+console.log(buttoncsv);
 const buttonData = csvToArray1(buttoncsv.responseText);
 
 
@@ -168,6 +169,7 @@ function oneCancel() {
   // ログの数を取得
   const lognum = logList.childElementCount;
   if (lognum == 0) { return false; };
+  // 最後のログを取得し、削除
   const lastLog = logList.lastElementChild;
   const lastValue = parseInt(lastLog.textContent.split('P')[0]);
   lastLog.remove();
