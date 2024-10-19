@@ -189,6 +189,7 @@ function oneCancel() {
 
 // 初期化処理
 function init() {
+  document.settings.reset();
   createButtons(buttonData);
   calculateRemaining();
   filterButtons();
