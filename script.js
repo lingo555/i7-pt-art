@@ -194,7 +194,7 @@ function init() {
   calculateRemaining();
   filterButtons();
   logList.innerHTML = '';
-  document.querySelectorAll('input[name="adjust1"]').[3].checked = true;
+  document.querySelectorAll('input[name="adjust1"]').[1].checked = true;
   document.querySelectorAll('input[name="adjust2"]').[5].checked = true;
   document.querySelectorAll('input[name="adjust3"]').[5].checked = true;
 };
