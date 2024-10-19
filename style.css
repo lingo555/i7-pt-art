@@ -24,7 +24,7 @@ h1 {
 .option {
 }
 input[type="number"] {
-  width: 70px;
+  width: 5em;
 }
 .input-area {
   float: left;
@@ -34,12 +34,16 @@ input[type="number"] {
 }
 .remain-area {
   /float: left;
+  /position: fixed;
   font-size: 1.6em;
   font-weight: bold;
 }
 .filter-area {
   float: none;
 }
+/*------- フィルタ -------*/
+
+
 /*------- 調整値 -------*/
 .adjust-list {
   display: flex;
@@ -47,13 +51,13 @@ input[type="number"] {
   margin: 3px 0;
 }
 .adjust-list > span {
-  width: 6em;
+  width: 5em;
   white-space: nowrap;
 }
-input[type="radio"] {
+input[type="radio"],input[type="checkbox"] {
   display: none;
 }
-.radio-label {
+.radio-label,.check-label {
   display: inline-block;
   width: 4.5em;
   text-align: center;
@@ -65,11 +69,12 @@ input[type="radio"] {
   font-size: 0.8em;
   margin: 0 2px;
 }
-.radio-label span {
+.radio-label > span {
   font-size: 0.9em;
   color: #717171;
 }
-.radio-label:has(input[type="radio"]:checked) {
+.radio-label:has(input[type="radio"]:checked),
+.check-label:has(input[type="checkbox"]:checked) {
   background: #e3ceff;
 }
 /*------- リセット、取り消し -------*/
@@ -93,6 +98,12 @@ input[type="radio"] {
   color: #fff;
   font-size: 0.9em;
 }
+/*======== ログ ========*/
+#log {
+  font-size: 0.8em;
+  margin-top: 0;
+}
+
 /*======== ボタン ========*/
 .button-area {
   height: 60vh;
@@ -114,4 +125,8 @@ button {
   text-align: left;
   font-size: 0.8em;
   margin: 2px;
+}
+button > span {
+  font-size: 0.9em;
+  color: #717171;
 }
