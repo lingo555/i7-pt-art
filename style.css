@@ -55,7 +55,7 @@ input[type="number"] {
   white-space: nowrap;
 }
 input[type="radio"],input[type="checkbox"] {
-  display: none;
+  /*-display: none;-*/
 }
 .radio-label,.check-label {
   display: inline-block;
