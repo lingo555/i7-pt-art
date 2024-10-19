@@ -88,13 +88,14 @@ function createButtons(data) {
 // ボタンクリック時の処理
 function handleClick(event) {
   // クリックされたボタンの要素を取得
-  const clickedButton = event.target;
+  const clickedButton = event.currentTarget;
 
   // ボタンの値と種類を取得
   const buttonValue = parseInt(clickedButton.dataset.value);
   const buttonType = clickedButton.dataset.type;
   const buttonStar = clickedButton.dataset.star;
   const buttonEvent = clickedButton.dataset.eventup;
+  const buttonLevel = clickedButton.dataset.level;
   
   // 調整値を取得
   const adjustValue1 = document.querySelector('input[name="adjust1"]:checked')
@@ -114,7 +115,7 @@ function handleClick(event) {
   
    // ログを追加
   const newLogItem = document.createElement('li');
-  newLogItem.innerText = `${buttonValue}Pt（${buttonStar}、${buttonType}、特効${buttonEvent}、特訓MAX${adjustValue1}枚、SSR以上${adjustValue2}枚、${adjustValue3}）`;
+  newLogItem.innerText = `${buttonValue}Pt（${buttonStar}、${buttonLevel}、${buttonType}、特効${buttonEvent}、特訓MAX${adjustValue1}枚、SSR以上${adjustValue2}枚、${adjustValue3}）`;
   logList.appendChild(newLogItem);
 };
 
