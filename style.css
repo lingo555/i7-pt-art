@@ -5,6 +5,7 @@ body {
   display: flex;
   justify-content: center;
   background-color: #84CDD6;
+  position: relative;
 }
 @media (max-width: 500px) {
   body {
@@ -20,7 +21,7 @@ h1 {
   background-color: #fff;
   border-radius: 30px;
   padding: 5px;
-  color: #92A4DA;
+  color: #7c8fc8;
 }
 hr {
   border-top: 1px solid #84CDD6;
@@ -28,16 +29,16 @@ hr {
 /*======== オプション ========*/
 .option {
   display:flex;
-  /align-items: stretch;
 }
 .input {
-  width: 55%;
+  width: 50%;
 }
 .input-text1 > span {
   width: 5em;
   display: inline-block;
   white-space: nowrap;
   margin: 2px 0;
+  font-weight: bold;
 }
 .input-text1 >input[type="number"] {
   width: 7em;
@@ -47,6 +48,7 @@ hr {
   display: inline-block;
   white-space: nowrap;
   margin: 2px 0;
+  font-weight: bold;
 }
 .input-text2 >input[type="number"] {
   width: 4em;
@@ -54,7 +56,6 @@ hr {
 .input-area {
   padding: 5px;
   margin: 5px 0;
-  border: px solid #bfbfbf;
   border-radius: 5px;
   background-color: #E6F4FF;
 }
@@ -62,7 +63,6 @@ hr {
 .filter-area {
   padding: 5px 5px 10px;
   margin: 5px 0;
-  border: px solid #bfbfbf;
   border-radius: 5px;
   background-color: #E6F4FF;
 }
@@ -90,14 +90,45 @@ input[type="checkbox"] {
   color: #fff;
   text-shadow: 1px 1px 1px #808080;
 }
+.fa-question-circle {
+  color: #7c8fc8;
+}
+.detail {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.8);
+}
+.detail-text {
+  top: 50em;
+  border: 10px solid #84CDD6;
+  border-radius: 5px;
+  background-color: #E6F4FF;
+  padding: 8px 5px;
+  height: 7em;
+  font-size: 0.9em;
+}
+.detail-text > div {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.1em;
+  margin-bottom: 3px;
+}
+.detail-text > span {
+  font-weight: bold;
+  color: #e874a8;
+}
 /*------- ログ -------*/
 .output {
   padding: 5px;
   margin: 5px 0 5px 5px;
-  border: px solid #bfbfbf;
   border-radius: 5px;
-  width: 55%;
-  height: 100%;
+  width: 50%;
   background-color: #E6F4FF;
 }
 .remain-area {
@@ -132,7 +163,6 @@ ul {
 .adjust-area {
   padding: 5px;
   margin: 5px 0;
-  border: px solid #bfbfbf;
   border-radius: 5px;
   background-color: #E6F4FF;
 }
@@ -145,6 +175,7 @@ ul {
 .adjust-list > span {
   width: 5em;
   white-space: nowrap;
+  font-weight: bold;
 }
 input[type="radio"] {
   display: none;
@@ -218,18 +249,21 @@ input[type="radio"] {
   box-shadow: none;
 }
 button {
-  color: #000;
+  color: #e874a8;
   text-align: left;
   font-size: 0.85em;
   margin: 2px;
+  padding: 1px 5px;
   width: 8em;
   white-space: nowrap;
   border: 1px solid #bfbfbf;
   border-radius: 5px;
   background: #f7f7f7;
   line-height: 1.2em;
+  font-weight: bold;
 }
 button > span {
   font-size: 0.9em;
   color: #717171;
+  font-weight: normal;
 }
