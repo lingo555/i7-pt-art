@@ -17,7 +17,7 @@ const cancelButton = document.getElementById('cancel');
 const buttoncsv = new XMLHttpRequest();
 buttoncsv.open("GET", "button.csv", false);
 buttoncsv.send();
-console.log(buttoncsv);
+//console.log(buttoncsv);
 const buttonData = csvToArray1(buttoncsv.responseText);
 
 
