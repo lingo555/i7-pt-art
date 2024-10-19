@@ -187,23 +187,40 @@ function oneCancel() {
   filterButtons();
 };
 
+// プレイスタイル詳細ポップアップ
+const detailMark = document.querySelector(".fa-question-circle");
+const detailBack = document.querySelector(".detail");
+// ポップアップ表示
+function showDetail() {
+  detailBack.style.display = "flex";
+}
+//　ポップアップ消去
+function closeDetail() {
+  detailBack.style.display = "none";
+}
+
 // 初期化処理
 function init() {
   document.settings.reset();
+  document.filter.reset();
   createButtons(buttonData);
   calculateRemaining();
   filterButtons();
-  logList.innerHTML = '';
-};
+  logList.innerHTML = "";
+}
 
 // イベントリスナーの設定
-targetInput.addEventListener('input', calculateRemaining);
-currentInput.addEventListener('input', calculateRemaining);
-event1Input.addEventListener('input', filterButtons);
-event2Input.addEventListener('input', filterButtons);
-filterCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterButtons));
-adjustInput.forEach(number => number.addEventListener('input', adjustValues));
-resetButton.addEventListener('click', init);
-cancelButton.addEventListener('click', oneCancel);
+targetInput.addEventListener("input", calculateRemaining);
+currentInput.addEventListener("input", calculateRemaining);
+event1Input.addEventListener("input", filterButtons);
+event2Input.addEventListener("input", filterButtons);
+filterCheckboxes.forEach((checkbox) =>
+  checkbox.addEventListener("change", filterButtons)
+);
+adjustInput.forEach((number) => number.addEventListener("input", adjustValues));
+resetButton.addEventListener("click", init);
+cancelButton.addEventListener("click", oneCancel);
+detailMark.addEventListener("click", showDetail);
+detailBack.addEventListener("click", closeDetail);
 
 init();
