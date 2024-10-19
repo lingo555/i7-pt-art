@@ -83,7 +83,6 @@ input[type="checkbox"] {
   line-height: 1.2em;
   padding: 2px 5px;
   font-size: 0.8em;
-  margin: 0 2px;
 }
 .check-label:has(input[type="checkbox"]:checked) {
   background: #f38cb1;
