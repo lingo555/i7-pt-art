@@ -4,7 +4,7 @@ body {
   font-size: 14px;
   display: flex;
   justify-content: center;
-  background-color: #84CDD6;
+  background-color: #84cdd6;
   position: relative;
 }
 @media (max-width: 500px) {
@@ -24,12 +24,13 @@ h1 {
   color: #7c8fc8;
 }
 hr {
-  border-top: 1px solid #84CDD6;
+  border-top: 1px solid #84cdd6;
 }
 /*======== オプション ========*/
 .option {
-  display:flex;
+  display: flex;
 }
+/*------- インプット -------*/
 .input {
   width: 50%;
 }
@@ -40,7 +41,7 @@ hr {
   margin: 2px 0;
   font-weight: bold;
 }
-.input-text1 >input[type="number"] {
+.input-text1 > input[type="number"] {
   width: 7em;
 }
 .input-text2 > span {
@@ -50,21 +51,21 @@ hr {
   margin: 2px 0;
   font-weight: bold;
 }
-.input-text2 >input[type="number"] {
+.input-text2 > input[type="number"] {
   width: 4em;
 }
 .input-area {
   padding: 5px;
   margin: 5px 0;
   border-radius: 5px;
-  background-color: #E6F4FF;
+  background-color: #e6f4ff;
 }
 /*------- フィルタ -------*/
 .filter-area {
   padding: 5px 5px 10px;
   margin: 5px 0;
   border-radius: 5px;
-  background-color: #E6F4FF;
+  background-color: #e6f4ff;
 }
 .category-filter {
   margin: -5px 0;
@@ -90,8 +91,15 @@ input[type="checkbox"] {
   color: #fff;
   text-shadow: 1px 1px 1px #808080;
 }
+.foricon {
+  display: inline-block;
+  position: relative;
+}
 .fa-question-circle {
+  position: absolute;
+  top: -0.7em;
   color: #7c8fc8;
+  font-size: 1.2em;
 }
 .detail {
   position: absolute;
@@ -102,13 +110,13 @@ input[type="checkbox"] {
   display: none;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .detail-text {
   top: 50em;
-  border: 10px solid #84CDD6;
+  border: 10px solid #84cdd6;
   border-radius: 5px;
-  background-color: #E6F4FF;
+  background-color: #e6f4ff;
   padding: 8px 5px;
   height: 7em;
   font-size: 0.9em;
@@ -129,7 +137,7 @@ input[type="checkbox"] {
   margin: 5px 0 5px 5px;
   border-radius: 5px;
   width: 50%;
-  background-color: #E6F4FF;
+  background-color: #e6f4ff;
 }
 .remain-area {
   font-size: 1.5em;
@@ -164,7 +172,7 @@ ul {
   padding: 5px;
   margin: 5px 0;
   border-radius: 5px;
-  background-color: #E6F4FF;
+  background-color: #e6f4ff;
 }
 .adjust-list {
   clear: left;
@@ -205,7 +213,7 @@ input[type="radio"] {
 .radio-label:has(input[type="radio"]:checked) > span {
   color: #fff;
 }
-/*------- リセット、取り消し -------*/
+/*======== リセット、取り消し ========*/
 #reset {
   background: #cc3434;
   border: none;
@@ -227,14 +235,13 @@ input[type="radio"] {
   font-size: 0.9em;
 }
 
-
 /*======== ボタン ========*/
 .button-area {
   height: 60vh;
   overflow-y: scroll;
   margin-top: 5px;
   border-radius: 5px;
-  background-color: #E6F4FF;
+  background-color: #e6f4ff;
 }
 .button-area::-webkit-scrollbar {
   width: 8px;
