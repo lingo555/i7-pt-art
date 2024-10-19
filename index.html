@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <title>アイナナPt調整ツール</title>
   <meta charset="utf-8">
@@ -14,6 +15,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
   <script defer src="script.js"></script>
 </head>
+
 <body>
   <div class="center-body">
     <h1>アイナナPt調整ツール</h1>
@@ -34,24 +36,24 @@
           </div>
         </div>
         <form name="filter">
-        <div class="filter-area">
-          <div class="category-filter">
-            <label class="check-label"><input type="checkbox" value="放置" checked>放置</label>
-            <label class="check-label"><input type="checkbox" value="FC" checked>FC</label>
-            <label class="check-label"><input type="checkbox" value="オート" checked>オート</label>　
-<i class="fas fa-question-circle"></i>
+          <div class="filter-area">
+            <div class="category-filter">
+              <label class="check-label"><input type="checkbox" value="放置" checked>放置</label>
+              <label class="check-label"><input type="checkbox" value="FC" checked>FC</label>
+              <label class="check-label"><input type="checkbox" value="オート" checked>オート</label>　
+              <div class="foricon"><i class="fas fa-question-circle"></i></div>
+            </div>
+            <hr>
+            <div class="category-filter">
+              <label class="check-label"><input type="checkbox" value="★1" checked>★1</label>
+              <label class="check-label"><input type="checkbox" value="★2" checked>★2</label>
+              <label class="check-label"><input type="checkbox" value="★3" checked>★3</label>
+              <label class="check-label"><input type="checkbox" value="★4" checked>★4</label>
+              <label class="check-label"><input type="checkbox" value="★5" checked>★5</label>
+            </div>
+            <hr>
+            <div class="category-filter"><label class="check-label"><input type="checkbox" id="align">下1桁を合わせる</label></div>
           </div>
-          <hr>
-          <div class="category-filter">
-            <label class="check-label"><input type="checkbox" value="★1" checked>★1</label>
-            <label class="check-label"><input type="checkbox" value="★2" checked>★2</label>
-            <label class="check-label"><input type="checkbox" value="★3" checked>★3</label>
-            <label class="check-label"><input type="checkbox" value="★4" checked>★4</label>
-            <label class="check-label"><input type="checkbox" value="★5" checked>★5</label>
-          </div>
-          <hr>
-          <div class="category-filter"><label class="check-label"><input type="checkbox" id="align">下1桁を合わせる</label></div>
-        </div>
         </form>
       </div>
       <div class="output">
@@ -95,13 +97,14 @@
     <input type="button" id="cancel" value="取り消し" />
     <div class="button-area"></div>
   </div>
-      <div class="detail">
-      <div class="detail-text">
-        <div>計算基準</div>
-        <span>放置</span>：スコアC、コンボボーナスなし<br>
-        <span>FC</span>：スコアSS(150%)、フルコンボ<br>
-        <span>オート</span>：スコアSS(150%)、コンボボーナスなし
-      </div>
+  <div class="detail">
+    <div class="detail-text">
+      <div>計算基準</div>
+      <span>放置</span>：スコアC、コンボボーナスなし<br>
+      <span>FC</span>：スコアSS(150%)、フルコンボ<br>
+      <span>オート</span>：スコアSS(150%)、コンボボーナスなし
     </div>
+  </div>
 </body>
+
 </html>
