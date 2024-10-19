@@ -28,16 +28,25 @@ h1 {
   /align-items: stretch;
 }
 .input {
-  width: 55%;
+  width: 45%;
 }
-.input-text > span {
+.input-text1 > span {
+  width: 5em;
+  display: inline-block;
+  white-space: nowrap;
+  margin: 2px 0;
+}
+.input-text1 >input[type="number"] {
+  width: 7em;
+}
+.input-text2 > span {
   width: 8em;
   display: inline-block;
   white-space: nowrap;
   margin: 2px 0;
 }
-input[type="number"] {
-  width: 4.5em;
+.input-text2 >input[type="number"] {
+  width: 4em;
 }
 .input-area {
   padding: 5px;
