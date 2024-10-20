@@ -112,7 +112,7 @@ function handleClick(event) {
 
   // ログを追加
   const newLogItem = document.createElement("li");
-  newLogItem.innerText = `${buttonValue} Pt（${buttonStar}、${buttonLevel}、${buttonType}、特効${buttonEvent}、特訓MAX${adjustValue1}枚、SSR以上${adjustValue2}枚、${adjustValue3}）`;
+  newLogItem.innerHTML = `<span>${buttonValue} Pt</span>（${buttonStar}、${buttonLevel}、${buttonType}、特効${buttonEvent}、特訓MAX${adjustValue1}枚、SSR以上${adjustValue2}枚、${adjustValue3}）`;
   logList.appendChild(newLogItem);
 }
 
