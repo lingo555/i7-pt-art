@@ -27,7 +27,7 @@ eventcsv.send();
 const eventData = csvToArray2(eventcsv.responseText);
 
 // csvから連想配列に変換する関数
-function csvToArray(str) {
+function csvToArray1(str) {
   // ヘッダー行の値配列を取得
   const headers = str.split("\n")[0].split(",");
   // 各行のテキスト配列を取得
