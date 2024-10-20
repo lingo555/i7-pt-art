@@ -222,6 +222,10 @@ input[type="checkbox"] {
 ul {
   padding-left: 2em;
 }
+li span {
+  color: #e874a8;
+  font-weight: bold;
+}
 /*======== 調整値 ========*/
 .adjust-area {
   padding: 5px;
