@@ -22,16 +22,21 @@
     <div class="option">
       <div class="input">
         <div class="input-area">
-          <div class="input-text1"><span>目標Pt</span>
+          <div class="input-text1">
+            <div>目標Pt</div>
             <input type="number" id="target" value=0>
           </div>
-          <div class="input-text1"><span>現在Pt</span>
+          <div class="input-text1">
+            <div>現在Pt</div>
             <input type="number" id="current" value=0>
           </div>
-          <div class="input-text2"><span>最大特効枚数</span>
+          <div class="input-text2">
+            <div>最大特効枚数<div class="foricon"><i class="fas fa-info-circle"></i></div>
+            </div>
             <input type="number" id="event1" value=0 min=0 max=6>
           </div>
-          <div class="input-text2"><span>最大準特効枚数</span>
+          <div class="input-text2">
+            <div>最大準特効枚数</div>
             <input type="number" id="event2" value=0 min=0 max=6>
           </div>
         </div>
@@ -40,8 +45,8 @@
             <div class="category-filter">
               <label class="check-label"><input type="checkbox" value="放置" checked>放置</label>
               <label class="check-label"><input type="checkbox" value="FC" checked>FC</label>
-              <label class="check-label"><input type="checkbox" value="オート" checked>オート</label>　
-              <div class="foricon"><i class="fas fa-question-circle"></i></div>
+              <label class="check-label"><input type="checkbox" value="オート" checked>オート</label>
+              <div class="foricon"><i class="fas fa-info-circle"></i></div>
             </div>
             <hr>
             <div class="category-filter">
@@ -52,12 +57,15 @@
               <label class="check-label"><input type="checkbox" value="★5" checked>★5</label>
             </div>
             <hr>
-            <div class="category-filter"><label class="check-label"><input type="checkbox" id="align">下1桁を合わせる</label></div>
+            <div class="category-filter">
+              <label class="check-label"><input type="checkbox" id="align">下1桁を合わせる</label>
+              <div class="foricon"><i class="fas fa-question-circle"></i></div>
+            </div>
           </div>
         </form>
       </div>
       <div class="output">
-        <div class="remain-area">目標まで <span id="remaining"></span> Pt</div>
+        <div class="remain-area">目標まで <span id="remaining">0</span> Pt</div>
         選択中：
         <div class="log-area">
           <ul id="log"></ul>
@@ -72,6 +80,7 @@
           <label class="radio-label"><input type="radio" name="adjust1" value="40">1枚<br><span>+ 40Pt</span></label>
           <label class="radio-label"><input type="radio" name="adjust1" value="80">2枚<br><span>+ 80Pt</span></label>
           <label class="radio-label"><input type="radio" name="adjust1" value="120" checked>3枚<br><span>+ 120Pt</span></label>
+          <div class="foricon"><i class="fas fa-question-circle"></i></div>
         </div>
         <div class="adjust-list">
           <span>SSR以上</span>
@@ -95,16 +104,204 @@
     </form>
     <input type="button" id="reset" value="リセット" />
     <input type="button" id="cancel" value="取り消し" />
+    <div class="foricon foricon-right"><i class="fas fa-file-alt"></i>特効倍率詳細</div>
     <div class="button-area"></div>
+    <div class="header">
+    開発・連絡先：<i class="fab fa-twitter"></i> <a href="https://twitter.com/ann05162">りんご @ann05162</a>
+  </div>
   </div>
   <div class="detail">
+    <div class="detail-text">
+      <div>特効枚数の記入目的</div>
+      各自の特効と準特効の最大枚数から、組み合わせ上<br>実現不可能な特効倍率を除外します。<br>
+      準々特効は6枚以上所持しているとする。
+    </div>
     <div class="detail-text">
       <div>計算基準</div>
       <span>放置</span>：スコアC、コンボボーナスなし<br>
       <span>FC</span>：スコアSS(150%)、フルコンボ<br>
       <span>オート</span>：スコアSS(150%)、コンボボーナスなし
     </div>
-  </div>
+    <div class="detail-text">
+      <div>表示Ptの値の調整</div>
+      「<span>下1桁を合わせる</span>」をチェックすると、目標までの残りPtと<br>下1桁が一致する選択肢のみ表示します。<br>
+      残りPtが2000程度になったら、下1桁を合わせた上で<span>特訓MAX<br>枚数</span>や<span>SSR枚数</span>、<span>合計Lv</span>を調整し、合うPtを探しましょう。<br><br>
+      ただ、実現できない組み合わせ（例：SSR以上0枚＆合計Lv300）<br>も表示されるため、ご自身で判断し、実現しやすい方を採用<br>してください。
+    </div>
+    <div class="detail-text">
+      <div>表示Ptの値の調整</div>
+      「<span>下1桁を合わせる</span>」をチェックすると、目標までの残りPtと<br>下1桁が一致する選択肢のみ表示します。<br>
+      残りPtが2000程度になったら、下1桁を合わせた上で<span>特訓MAX<br>枚数</span>や<span>SSR枚数</span>、<span>合計Lv</span>を調整し、合うPtを探しましょう。<br><br>
+      ただ、実現できない組み合わせ（例：SSR以上0枚＆合計Lv300）<br>も表示されるため、ご自身で判断し、実現しやすい方を採用<br>してください。
+    </div>
+    <div class="detail-text detail-text-long">
+      <div>特効倍率の組み合わせ詳細</div>
+      特効、準特効、準々特効の組み合わせによって<br>多様な特効倍率が実現できますが、<br>本ツールは以下の倍率のみ取り扱います。
+      <table>
+        <thead>
+          <tr>
+            <th>特効倍率</th>
+            <th>特効枚数</th>
+            <th>準特効枚数</th>
+            <th>準々特効枚数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>5%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>20%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>20%</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>30%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>30%</td>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>50%</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>50%</td>
+            <td>0</td>
+            <td>2</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>60%</td>
+            <td>1</td>
+            <td>0</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>60%</td>
+            <td>0</td>
+            <td>2</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>60%</td>
+            <td>0</td>
+            <td>3</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>80%</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>80%</td>
+            <td>0</td>
+            <td>4</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>100%</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>100%</td>
+            <td>0</td>
+            <td>5</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>100%</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>130%</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>130%</td>
+            <td>1</td>
+            <td>4</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>150%</td>
+            <td>3</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>150%</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>150%</td>
+            <td>1</td>
+            <td>5</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>180%</td>
+            <td>3</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>180%</td>
+            <td>2</td>
+            <td>4</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>210%</td>
+            <td>4</td>
+            <td>0</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>210%</td>
+            <td>3</td>
+            <td>3</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+ </div>
+
 </body>
 
 </html>
