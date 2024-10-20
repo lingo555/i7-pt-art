@@ -13,6 +13,7 @@ body {
   }
 }
 .center-body {
+  width: 100vw;
   max-width: 700px;
 }
 h1 {
@@ -26,6 +27,111 @@ h1 {
 hr {
   border-top: 1px solid #84cdd6;
 }
+body *::-webkit-scrollbar {
+  width: 8px;
+}
+body *::-webkit-scrollbar-track {
+  background: #d3d3d3;
+  /border-radius: 10px;
+}
+body *::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-left: 1.5px solid #d3d3d3;
+  border-right: 1.5px solid #d3d3d3;
+  /border-radius: 10px;
+}
+.header {
+  margin-top: 3em;
+  text-align: center;
+  font-size: 0.8em;
+  color: #555;
+}
+/*------- 詳細ポップアップ -------*/
+.foricon {
+  display: inline-block;
+  position: relative;
+  margin-left: 5px;
+}
+.foricon-right {
+  float: right;
+  background-color: #7c8fc8;
+  font-weight: bold;
+  color: #fff;
+  font-size: 0.9em;
+  padding: 2px 10px 2px 2.2em;
+  border-radius: 10px;
+  margin-right: 0.5em;
+}
+.fas {
+  position: absolute;
+  top: -0.7em;
+  color: #7c8fc8;
+  font-size: 1.2em;
+}
+.foricon-right > .fas {
+  top: 0.3em;
+  left: 0.7em;
+  color: #fff;
+}
+.input-text2 .fas {
+  top: -0.8em;
+}
+.detail {
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.detail-text {
+  top: 50em;
+  border: 10px solid #84cdd6;
+  border-radius: 5px;
+  background-color: #e6f4ff;
+  padding: 8px;
+  font-size: 0.9em;
+  display: none;
+}
+.detail-text-long {
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+.detail-text > div {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+.detail-text > span {
+  font-weight: bold;
+  color: #e874a8;
+}
+table {
+  border-collapse: collapse;
+  font-size: 0.9em;
+  text-align: center;
+  margin-top: 5px;
+}
+th {
+  background-color: #84cdd6;
+  white-space: nowrap;
+  color: #fff;
+}
+th,
+td {
+  border: 2px solid #e6f4ff;
+  padding: 4px 6px;
+}
+td {
+  background: #a3dae0;
+}
+tr:nth-child(odd) td {
+  background: #c5e9f8;
+}
 /*======== オプション ========*/
 .option {
   display: flex;
@@ -34,7 +140,7 @@ hr {
 .input {
   width: 50%;
 }
-.input-text1 > span {
+.input-text1 > div {
   width: 5em;
   display: inline-block;
   white-space: nowrap;
@@ -44,7 +150,7 @@ hr {
 .input-text1 > input[type="number"] {
   width: 7em;
 }
-.input-text2 > span {
+.input-text2 > div {
   width: 8em;
   display: inline-block;
   white-space: nowrap;
@@ -91,46 +197,6 @@ input[type="checkbox"] {
   color: #fff;
   text-shadow: 1px 1px 1px #808080;
 }
-.foricon {
-  display: inline-block;
-  position: relative;
-}
-.fa-question-circle {
-  position: absolute;
-  top: -0.7em;
-  color: #7c8fc8;
-  font-size: 1.2em;
-}
-.detail {
-  position: absolute;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-.detail-text {
-  top: 50em;
-  border: 10px solid #84cdd6;
-  border-radius: 5px;
-  background-color: #e6f4ff;
-  padding: 8px 5px;
-  height: 7em;
-  font-size: 0.9em;
-}
-.detail-text > div {
-  font-weight: bold;
-  text-align: center;
-  font-size: 1.1em;
-  margin-bottom: 3px;
-}
-.detail-text > span {
-  font-weight: bold;
-  color: #e874a8;
-}
 /*------- ログ -------*/
 .output {
   padding: 5px;
@@ -143,26 +209,15 @@ input[type="checkbox"] {
   font-size: 1.5em;
   font-weight: bold;
   text-align: center;
+  margin-bottom: 2px;
 }
 #log {
   font-size: 0.8em;
   margin-top: 0;
 }
 .log-area {
-  height: 11em;
+  height: 9em;
   overflow-y: scroll;
-}
-.log-area::-webkit-scrollbar {
-  width: 8px;
-}
-.log-area::-webkit-scrollbar-track {
-  border: none;
-  border-radius: 10px;
-}
-.log-area::-webkit-scrollbar-thumb {
-  background: #d3d3d3;
-  border-radius: 10px;
-  box-shadow: none;
 }
 ul {
   padding-left: 2em;
@@ -215,7 +270,7 @@ input[type="radio"] {
 }
 /*======== リセット、取り消し ========*/
 #reset {
-  background: #cc3434;
+  background: #e15353;
   border: none;
   border-radius: 3px;
   width: 6em;
@@ -225,7 +280,7 @@ input[type="radio"] {
   font-size: 0.9em;
 }
 #cancel {
-  background: #36a424;
+  background: #4ea141;
   border: none;
   border-radius: 3px;
   width: 6em;
@@ -242,18 +297,7 @@ input[type="radio"] {
   margin-top: 5px;
   border-radius: 5px;
   background-color: #e6f4ff;
-}
-.button-area::-webkit-scrollbar {
-  width: 8px;
-}
-.button-area::-webkit-scrollbar-track {
-  border: none;
-  border-radius: 10px;
-}
-.button-area::-webkit-scrollbar-thumb {
-  background: #d3d3d3;
-  border-radius: 10px;
-  box-shadow: none;
+  padding: 5px;
 }
 button {
   color: #e874a8;
