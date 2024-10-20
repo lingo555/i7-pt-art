@@ -97,7 +97,7 @@ body *::-webkit-scrollbar-thumb {
   display: none;
 }
 .detail-text-long {
-  max-height: 80vh;
+  max-height: 70vh;
   overflow-y: scroll;
 }
 .detail-text > div {
@@ -216,7 +216,7 @@ input[type="checkbox"] {
   margin-top: 0;
 }
 .log-area {
-  height: 9em;
+  height: 10em;
   overflow-y: scroll;
 }
 ul {
