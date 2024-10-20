@@ -122,6 +122,7 @@ function calculateRemaining() {
   const current = parseInt(currentInput.value);
   const remainingValue = target - current;
   remaining.textContent = `${remainingValue}`;
+  filterButtons();
 }
 
 // フィルター処理を行う関数
