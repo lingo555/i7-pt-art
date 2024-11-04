@@ -40,8 +40,8 @@ body *::-webkit-scrollbar-thumb {
   border-right: 1.5px solid #d3d3d3;
   /border-radius: 10px;
 }
-.header {
-  margin-top: 3em;
+.footer {
+  margin: 3em 0 1em;
   text-align: center;
   font-size: 0.8em;
   color: #555;
@@ -191,7 +191,7 @@ input[type="checkbox"] {
   padding: 2px 5px;
   font-size: 0.8em;
 }
-.check-label:has(input[type="checkbox"]:checked) {
+input[type="checkbox"]:checked + .check-label {
   background: #f38cb1;
   font-weight: bold;
   color: #fff;
@@ -262,15 +262,17 @@ input[type="radio"] {
 .radio-label > span {
   font-size: 0.9em;
   color: #717171;
+  white-space: nowrap;
 }
-.radio-label:has(input[type="radio"]:checked) {
+input[type="radio"]:checked + .radio-label {
   background: #f38cb1;
   font-weight: bold;
   color: #fff;
   text-shadow: 1px 1px 1px #808080;
 }
-.radio-label:has(input[type="radio"]:checked) > span {
+input[type="radio"]:checked + .radio-label > span {
   color: #fff;
+  font-weight: normal;
 }
 /*======== リセット、取り消し ========*/
 #reset {
