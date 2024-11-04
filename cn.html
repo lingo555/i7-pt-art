@@ -24,16 +24,16 @@
             <input type="tel" id="target" value=0>
           </div>
           <div class="input-text1">
-            <div>目前Pt</div>
+            <div>当前Pt</div>
             <input type="tel" id="current" value=0>
           </div>
           <div class="input-text2">
-            <div>金特效所持数<div class="foricon"><i class="fas fa-question-circle"></i></div>
+            <div>金特效持有数<div class="foricon"><i class="fas fa-question-circle"></i></div>
             </div>
             <input type="tel" id="event1" value=0>
           </div>
           <div class="input-text2">
-            <div>银特效所持数</div>
+            <div>银特效持有数</div>
             <input type="tel" id="event2" value=0>
           </div>
         </div>
@@ -55,7 +55,7 @@
             </div>
             <hr>
             <div class="category-filter">
-              <input type="checkbox" id="align"><label class="check-label" for="align">个位数一致</label>
+              <input type="checkbox" id="align"><label class="check-label" for="align">匹配个位数</label>
               <div class="foricon"><i class="fas fa-question-circle"></i></div>
             </div>
           </div>
@@ -73,20 +73,20 @@
       <div class="adjust-area">
         <div class="adjust-list">
           <span>满特训</span>
-          <input type="radio" name="adjust1" id="radio1-1" value="0"><label class="radio-label" for="radio1-1">0枚<br><span>+ 0Pt</span></label>
-          <input type="radio" name="adjust1" id="radio1-2" value="40"><label class="radio-label" for="radio1-2">1枚<br><span>+ 40Pt</span></label>
-          <input type="radio" name="adjust1" id="radio1-3" value="80"><label class="radio-label" for="radio1-3">2枚<br><span>+ 80Pt</span></label>
-          <input type="radio" name="adjust1" id="radio1-4" value="120" checked><label class="radio-label" for="radio1-4">3枚<br><span>+ 120Pt</span></label>
+          <input type="radio" name="adjust1" id="radio1-1" value="0"><label class="radio-label" for="radio1-1">0张<br><span>+ 0Pt</span></label>
+          <input type="radio" name="adjust1" id="radio1-2" value="40"><label class="radio-label" for="radio1-2">1张<br><span>+ 40Pt</span></label>
+          <input type="radio" name="adjust1" id="radio1-3" value="80"><label class="radio-label" for="radio1-3">2张<br><span>+ 80Pt</span></label>
+          <input type="radio" name="adjust1" id="radio1-4" value="120" checked><label class="radio-label" for="radio1-4">3张<br><span>+ 120Pt</span></label>
           <div class="foricon"><i class="fas fa-question-circle"></i></div>
         </div>
         <div class="adjust-list">
           <span>SSR以上</span>
-          <input type="radio" name="adjust2" id="radio2-1" value="0"><label class="radio-label" for="radio2-1">0枚<br><span>+ 0Pt</span></label>
-          <input type="radio" name="adjust2" id="radio2-2" value="10"><label class="radio-label" for="radio2-2">1枚<br><span>+ 10Pt</span></label>
-          <input type="radio" name="adjust2" id="radio2-3" value="20"><label class="radio-label" for="radio2-3">2枚<br><span>+ 20Pt</span></label>
-          <input type="radio" name="adjust2" id="radio2-4" value="30"><label class="radio-label" for="radio2-4">3枚<br><span>+ 30Pt</span></label>
-          <input type="radio" name="adjust2" id="radio2-5" value="40"><label class="radio-label" for="radio2-5">4枚<br><span>+ 40Pt</span></label>
-          <input type="radio" name="adjust2" id="radio2-6" value="50" checked><label class="radio-label" for="radio2-6">5枚<br><span>+ 50Pt</span></label>
+          <input type="radio" name="adjust2" id="radio2-1" value="0"><label class="radio-label" for="radio2-1">0张<br><span>+ 0Pt</span></label>
+          <input type="radio" name="adjust2" id="radio2-2" value="10"><label class="radio-label" for="radio2-2">1张<br><span>+ 10Pt</span></label>
+          <input type="radio" name="adjust2" id="radio2-3" value="20"><label class="radio-label" for="radio2-3">2张<br><span>+ 20Pt</span></label>
+          <input type="radio" name="adjust2" id="radio2-4" value="30"><label class="radio-label" for="radio2-4">3张<br><span>+ 30Pt</span></label>
+          <input type="radio" name="adjust2" id="radio2-5" value="40"><label class="radio-label" for="radio2-5">4张<br><span>+ 40Pt</span></label>
+          <input type="radio" name="adjust2" id="radio2-6" value="50" checked><label class="radio-label" for="radio2-6">5张<br><span>+ 50Pt</span></label>
         </div>
         <div class="adjust-list">
           <span>合计Lv</span>
@@ -106,38 +106,38 @@
   </div>
   <div class="detail">
     <div class="detail-text">
-      <div>特効・準特効枚数の記入</div>
-      特効と準特効の所持枚数（<strong>フレンド抜き</strong>）から、<br>組み合わせ上実現不可能な特効倍率を除外します。<br><br>
-      ※5枚以上所持の場合は「5」と記入してください。<br>
-      ※準々特効は5枚以上所持しているとします。<br>
-      ※フレンドから特効・準特効・準々特効のいずれも<br>　借りられるとします。     
+      <div>特效持有数</div>
+      根据填写的金银特效持有数（<strong>不算好友</strong>）排列组合，<br>自动排除无法达成的特效倍率。<br><br>
+      ※大于5张时请填写“5”。<br>
+      ※铜特效数均以5张计算。<br>
+      ※假设金银铜特效好友均存在。     
     </div>
     <div class="detail-text">
-      <div>計算基準</div>
-      <span>放置</span>：スコアC、コンボなし<br>
-      <span>FC</span>：スコアSS(150%)、フルコンボ<br>
-      <span>オート</span>：スコアSS(150%)、コンボなし
+      <div>计算基准</div>
+      <span>放置</span>：分数C档、无Combo奖励<br>
+      <span>FC</span>：分数SS(150%)档、FC<br>
+      <span>自动</span>：分数SS(150%)档、无Combo奖励
     </div>
     <div class="detail-text">
-      <div>下1桁を合わせる意味</div>
-      「<span>下1桁を合わせる</span>」をチェックすると、目標までの残りPtと<br>下1桁が一致する選択肢のみ表示します。<br><br>
-      選択肢のPt値は特訓MAX枚数やSSR枚数、合計Lvで調整でき<br>ますが、調整値はすべて10の倍数のため、下1桁を合わせた<br>上で調整すると、目的のPtを探しやすくなります。
+      <div>匹配个位数的说明</div>
+      选择“<span>匹配个位数</span>”时、仅显示与剩余Pt个位数一致的Pt选项。<br><br>
+      选项的Pt值可以通过满特训数、SSR数及合计Lv来进行调整。<br>因为调整值均为10的倍数，所以匹配个位数后再进行调整会<br>简单很多。
     </div>
     <div class="detail-text">
-      <div>選択肢のPt値の調整</div>
-      選択肢のPt値は<span>特訓MAX枚数</span>や<span>SSR枚数</span>、<span>合計Lv</span>で調整<br>できます。初期状態は最大値です。<br><br>
-      ただ、実際に実現できない組み合わせ（例：SSR以上0枚＆<br>合計Lv300）も出現するため、ご自身で判断し、実現しや<br>すい方を採用してください。
+      <div>选项的Pt值调整</div>
+      选项的Pt值可以通过<span>满特训数</span>、<span>SSR数</span>及<span>合计Lv</span>来进行调整。<br>初始状态为最大值。<br><br>
+      要注意的是，实际无法达成的组合（例：SSR以上0张＆<br>合计Lv300）也会出现，这点请自己判断可行性。
     </div>
     <div class="detail-text detail-text-long">
-      <div>特効倍率の組み合わせ詳細</div>
-      本ツールが扱う特効倍率を実現できる組み合わせ<br>の詳細は以下で確認してください。
+      <div>特效倍率的组合明细</div>
+      请从下表确认选项里出现的特效倍率如何组合。
       <table>
         <thead>
           <tr>
-            <th>特効倍率</th>
-            <th>特効枚数</th>
-            <th>準特効枚数</th>
-            <th>準々特効枚数</th>
+            <th>特效倍率</th>
+            <th>金特效数</th>
+            <th>银特效数</th>
+            <th>铜特效数</th>
           </tr>
         </thead>
         <tbody>
