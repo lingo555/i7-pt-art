@@ -147,7 +147,7 @@ tr:nth-child(odd) td {
   margin: 2px 0;
   font-weight: bold;
 }
-.input-text1 > input[type="number"] {
+.input-text1 > input[type="tel"] {
   width: 6.9em;
 }
 .input-text2 > div {
@@ -157,7 +157,7 @@ tr:nth-child(odd) td {
   margin: 2px 0;
   font-weight: bold;
 }
-.input-text2 > input[type="number"] {
+.input-text2 > input[type="tel"] {
   width: 3.9em;
 }
 .input-area {
