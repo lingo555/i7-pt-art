@@ -67,7 +67,7 @@ function createButtons(data) {
   buttonArea.innerHTML = "";
   data.forEach((item) => {
     const button = document.createElement("button");
-    button.innerHTML = `${item.value} Pt<br><span>${item.star}、${item.level}<br>${item.type}、特效${item.eventup}</span>`;
+    button.innerHTML = `${item.value} Pt<br><span>${item.star}、${item.level}<br>${item.typecn}、特效${item.eventup}</span>`;
     button.dataset.value = item.value;
     button.dataset.defvalue = item.defvalue;
     button.dataset.type = item.typecn;
