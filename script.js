@@ -70,7 +70,7 @@ function createButtons(data) {
     button.innerHTML = `${item.value} Pt<br><span>${item.star}、${item.level}<br>${item.type}、特効${item.eventup}</span>`;
     button.dataset.value = item.value;
     button.dataset.defvalue = item.defvalue;
-    button.dataset.type = item.type-jp;
+    button.dataset.type = item.type;
     button.dataset.star = item.star;
     button.dataset.level = item.level;
     button.dataset.eventup = item.eventup;
