@@ -131,8 +131,8 @@ function filterButtons() {
     .filter((checkbox) => checkbox.checked)
     .map((checkbox) => checkbox.value);
   checkedTypes.push("AUTO");
-  const event1N = Math.min(6, parseInt(event1Input.value)); //特効枚数
-  const event2N = Math.min(6, parseInt(event2Input.value)); //準特効枚数
+  const event1N = Math.min(5, parseInt(event1Input.value)); //特効枚数
+  const event2N = Math.min(5, parseInt(event2Input.value)); //準特効枚数
   const eventlist = eventData[event1N][event2N];
 
   const align = alignCheckbox.checked;
