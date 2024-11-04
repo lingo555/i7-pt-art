@@ -1,1 +1,304 @@
-test
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <title>爱娜娜月活Pt调整工具</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1">
+  <meta property="og:title" content="爱娜娜月活Pt调整工具">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@ann05126">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <div class="center-body">
+    <h1>爱娜娜月活Pt调整工具</h1>
+    <div class="option">
+      <div class="input">
+        <div class="input-area">
+          <div class="input-text1">
+            <div>目標Pt</div>
+            <input type="number" id="target" value=0 min=0>
+          </div>
+          <div class="input-text1">
+            <div>現在Pt</div>
+            <input type="number" id="current" value=0 min=0>
+          </div>
+          <div class="input-text2">
+            <div>特効所持枚数<div class="foricon"><i class="fas fa-question-circle"></i></div>
+            </div>
+            <input type="number" id="event1" value=0 min=0 max=5>
+          </div>
+          <div class="input-text2">
+            <div>準特効所持枚数</div>
+            <input type="number" id="event2" value=0 min=0 max=5>
+          </div>
+        </div>
+        <form name="filter">
+          <div class="filter-area">
+            <div class="category-filter">
+              <input type="checkbox" id="filter1-1" value="放置" checked><label class="check-label" for="filter1-1">放置</label>
+              <input type="checkbox" id="filter1-2" value="FC" checked><label class="check-label" for="filter1-2">FC</label>
+              <input type="checkbox" id="filter1-3" value="オート" checked><label class="check-label" for="filter1-3">オート</label>
+              <div class="foricon"><i class="fas fa-question-circle"></i></div>
+            </div>
+            <hr>
+            <div class="category-filter">
+              <input type="checkbox" id="filter2-1" value="★1" checked><label class="check-label" for="filter2-1">★1</label>
+              <input type="checkbox" id="filter2-2" value="★2" checked><label class="check-label" for="filter2-2">★2</label>
+              <input type="checkbox" id="filter2-3" value="★3" checked><label class="check-label" for="filter2-3">★3</label>
+              <input type="checkbox" id="filter2-4" value="★4" checked><label class="check-label" for="filter2-4">★4</label>
+              <input type="checkbox" id="filter2-5" value="★5" checked><label class="check-label" for="filter2-5">★5</label>
+            </div>
+            <hr>
+            <div class="category-filter">
+              <input type="checkbox" id="align"><label class="check-label" for="align">下1桁を合わせる</label>
+              <div class="foricon"><i class="fas fa-question-circle"></i></div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="output">
+        <div class="remain-area">目標まで <span id="remaining">0</span> Pt</div>
+        選択中：
+        <div class="log-area">
+          <ul id="log"></ul>
+        </div>
+      </div>
+    </div>
+    <form name="settings">
+      <div class="adjust-area">
+        <div class="adjust-list">
+          <span>特訓MAX</span>
+          <input type="radio" name="adjust1" id="radio1-1" value="0"><label class="radio-label" for="radio1-1">0枚<br><span>+ 0Pt</span></label>
+          <input type="radio" name="adjust1" id="radio1-2" value="40"><label class="radio-label" for="radio1-2">1枚<br><span>+ 40Pt</span></label>
+          <input type="radio" name="adjust1" id="radio1-3" value="80"><label class="radio-label" for="radio1-3">2枚<br><span>+ 80Pt</span></label>
+          <input type="radio" name="adjust1" id="radio1-4" value="120" checked><label class="radio-label" for="radio1-4">3枚<br><span>+ 120Pt</span></label>
+          <div class="foricon"><i class="fas fa-question-circle"></i></div>
+        </div>
+        <div class="adjust-list">
+          <span>SSR以上</span>
+          <input type="radio" name="adjust2" id="radio2-1" value="0"><label class="radio-label" for="radio2-1">0枚<br><span>+ 0Pt</span></label>
+          <input type="radio" name="adjust2" id="radio2-2" value="10"><label class="radio-label" for="radio2-2">1枚<br><span>+ 10Pt</span></label>
+          <input type="radio" name="adjust2" id="radio2-3" value="20"><label class="radio-label" for="radio2-3">2枚<br><span>+ 20Pt</span></label>
+          <input type="radio" name="adjust2" id="radio2-4" value="30"><label class="radio-label" for="radio2-4">3枚<br><span>+ 30Pt</span></label>
+          <input type="radio" name="adjust2" id="radio2-5" value="40"><label class="radio-label" for="radio2-5">4枚<br><span>+ 40Pt</span></label>
+          <input type="radio" name="adjust2" id="radio2-6" value="50" checked><label class="radio-label" for="radio2-6">5枚<br><span>+ 50Pt</span></label>
+        </div>
+        <div class="adjust-list">
+          <span>合計Lv</span>
+          <input type="radio" name="adjust3" id="radio3-1" value="0"><label class="radio-label" for="radio3-1">Lv0<br><span>+ 0Pt</span></label>
+          <input type="radio" name="adjust3" id="radio3-2" value="20"><label class="radio-label" for="radio3-2">Lv100<br><span>+ 20Pt</span></label>
+          <input type="radio" name="adjust3" id="radio3-3" value="40"><label class="radio-label" for="radio3-3">Lv150<br><span>+ 40Pt</span></label>
+          <input type="radio" name="adjust3" id="radio3-4" value="60"><label class="radio-label" for="radio3-4">Lv200<br><span>+ 60Pt</span></label>
+          <input type="radio" name="adjust3" id="radio3-5" value="80"><label class="radio-label" for="radio3-5">Lv250<br><span>+ 80Pt</span></label>
+          <input type="radio" name="adjust3" id="radio3-6" value="100" checked><label class="radio-label" for="radio3-6">Lv300<br><span>+ 100Pt</span></label>
+        </div>
+      </div>
+    </form>
+    <input type="button" id="reset" value="リセット" />
+    <input type="button" id="cancel" value="取り消し" />
+    <div class="foricon foricon-right"><i class="fas fa-file-alt"></i>特効倍率内訳</div>
+    <div class="button-area"></div>
+    <div class="footer">
+    開発・連絡先：<i class="fab fa-twitter"></i> <a href="https://twitter.com/ann05162">りんご @ann05162</a>
+  </div>
+  </div>
+  <div class="detail">
+    <div class="detail-text">
+      <div>特効・準特効枚数の記入</div>
+      特効と準特効の所持枚数（<strong>フレンド抜き</strong>）から、<br>組み合わせ上実現不可能な特効倍率を除外します。<br><br>
+      ※5枚以上所持の場合は「5」と記入してください。<br>
+      ※準々特効は5枚以上所持しているとします。<br>
+      ※フレンドから特効・準特効・準々特効のいずれも<br>　借りられるとします。     
+    </div>
+    <div class="detail-text">
+      <div>計算基準</div>
+      <span>放置</span>：スコアC、コンボなし<br>
+      <span>FC</span>：スコアSS(150%)、フルコンボ<br>
+      <span>オート</span>：スコアSS(150%)、コンボなし
+    </div>
+    <div class="detail-text">
+      <div>下1桁を合わせる意味</div>
+      「<span>下1桁を合わせる</span>」をチェックすると、目標までの残りPtと<br>下1桁が一致する選択肢のみ表示します。<br><br>
+      選択肢のPt値は特訓MAX枚数やSSR枚数、合計Lvで調整でき<br>ますが、調整値はすべて10の倍数のため、下1桁を合わせた<br>上で調整すると、目的のPtを探しやすくなります。
+    </div>
+    <div class="detail-text">
+      <div>選択肢のPt値の調整</div>
+      選択肢のPt値は<span>特訓MAX枚数</span>や<span>SSR枚数</span>、<span>合計Lv</span>で調整<br>できます。初期状態は最大値です。<br><br>
+      ただ、実際に実現できない組み合わせ（例：SSR以上0枚＆<br>合計Lv300）も出現するため、ご自身で判断し、実現しや<br>すい方を採用してください。
+    </div>
+    <div class="detail-text detail-text-long">
+      <div>特効倍率の組み合わせ詳細</div>
+      本ツールが扱う特効倍率を実現できる組み合わせ<br>の詳細は以下で確認してください。
+      <table>
+        <thead>
+          <tr>
+            <th>特効倍率</th>
+            <th>特効枚数</th>
+            <th>準特効枚数</th>
+            <th>準々特効枚数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>5%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>20%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>20%</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>30%</td>
+            <td>0</td>
+            <td>0</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>30%</td>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>50%</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>50%</td>
+            <td>0</td>
+            <td>2</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>60%</td>
+            <td>1</td>
+            <td>0</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>60%</td>
+            <td>0</td>
+            <td>2</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>60%</td>
+            <td>0</td>
+            <td>3</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>80%</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>80%</td>
+            <td>0</td>
+            <td>4</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>100%</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>100%</td>
+            <td>0</td>
+            <td>5</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>100%</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>130%</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>130%</td>
+            <td>1</td>
+            <td>4</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>150%</td>
+            <td>3</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>150%</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>150%</td>
+            <td>1</td>
+            <td>5</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>180%</td>
+            <td>3</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>180%</td>
+            <td>2</td>
+            <td>4</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>210%</td>
+            <td>4</td>
+            <td>0</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>210%</td>
+            <td>3</td>
+            <td>3</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+ </div>
+
+</body>
+
+</html>
