@@ -1,4 +1,4 @@
-id,level,star,type-jp,type-cn,eventup,defvalue,value
+id,level,star,type,typecn,eventup,defvalue,value
 1,EXPERT+,★5,FC,FC,210%,4585,4855
 2,EXPERT+,★4,FC,FC,210%,4523,4793
 3,EXPERT+,★3,FC,FC,210%,4430,4700
