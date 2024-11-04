@@ -19,7 +19,6 @@ buttoncsv.open("GET", "button.csv", false);
 buttoncsv.send();
 const buttonData = csvToArray1(buttoncsv.responseText);
 
-
 // 特効枚数と倍率の配列
 const eventcsv = new XMLHttpRequest();
 eventcsv.open("GET", "eventdata.csv", false);
@@ -46,15 +45,16 @@ function csvToArray1(str) {
   return arr;
 }
 
+// csvから配列に変換する関数
 function csvToArray2(str) {
   // 各行のテキスト配列を取得
   const rows = str.split(/\n|\r\n|\r/);
   rows.pop();
   let arr3 = [];
   let k = 0;
-  for (var i = 0; i < 7; i++) {
+  for (var i = 0; i < 6; i++) {
     arr3[i] = [];
-    for (var j = 0; j < 7; j++) {
+    for (var j = 0; j < 6; j++) {
       arr3[i][j] = rows[k].split(",");
       k++;
     }
