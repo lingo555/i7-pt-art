@@ -312,10 +312,10 @@ input[type="radio"]:checked + .radio-label > span {
 button {
   color: #e874a8;
   text-align: left;
-  font-size: 0.85em;
+  font-size: 0.83em;
   margin: 2px;
-  padding: 1px 5px;
-  width: 8em;
+  padding: 1px 4px;
+  width: 8.2em;
   white-space: nowrap;
   border: 1px solid #bfbfbf;
   border-radius: 5px;
