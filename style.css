@@ -52,6 +52,10 @@ body *::-webkit-scrollbar-thumb {
   position: relative;
   margin-left: 5px;
 }
+.foricon:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
 .foricon-right {
   float: right;
   background-color: #7c8fc8;
