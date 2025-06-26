@@ -24,6 +24,11 @@ const eventcsv = new XMLHttpRequest();
 eventcsv.open("GET", "eventdata.csv", false);
 eventcsv.send();
 const eventData = csvToArray2(eventcsv.responseText);
+// 復刻時の特効枚数と倍率の配列
+const eventcsv2 = new XMLHttpRequest();
+eventcsv2.open("GET", "eventdata2.csv", false);
+eventcsv2.send();
+const eventData2 = csvToArray2(eventcsv2.responseText);
 
 // csvから連想配列に変換する関数
 function csvToArray1(str) {
@@ -134,6 +139,7 @@ function filterButtons() {
   const event1N = Math.min(5, parseInt(event1Input.value)); //特効枚数
   const event2N = Math.min(5, parseInt(event2Input.value)); //準特効枚数
   const eventlist = eventData[event1N][event2N];
+  // ここを変更して、復刻有無のリストを適用する
 
   const align = alignCheckbox.checked;
   const allButtons = document.querySelectorAll(".button-area button");
