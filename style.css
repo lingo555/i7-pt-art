@@ -165,13 +165,10 @@ tr:nth-child(odd) td {
   width: 3.9em;
 }
 .input-text2 > input[type="checkbox"] {
-  /margin: 0;
-}
-.input-text2 > input[type="checkbox"] {
   position: relative;
   width: 1.1em;
   height: 1.1em;
-  border: 1px solid #000;
+  border: 1px solid #767676;
   background: #f7f7f7;
   border-radius: 0;
   vertical-align: -0.4em;
