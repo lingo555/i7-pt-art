@@ -2,6 +2,7 @@ const targetInput = document.getElementById("target");
 const currentInput = document.getElementById("current");
 const event1Input = document.getElementById("event1");
 const event2Input = document.getElementById("event2");
+const event3Input = document.getElementById("event3");
 const remaining = document.getElementById("remaining");
 const alignCheckbox = document.getElementById("align");
 const filterCheckboxes = document.querySelectorAll(".filter-area input");
@@ -24,6 +25,11 @@ const eventcsv = new XMLHttpRequest();
 eventcsv.open("GET", "eventdata.csv", false);
 eventcsv.send();
 const eventData = csvToArray2(eventcsv.responseText);
+// 復刻時の特効枚数と倍率の配列
+const eventcsv2 = new XMLHttpRequest();
+eventcsv2.open("GET", "eventdata2.csv", false);
+eventcsv2.send();
+const eventData2 = csvToArray2(eventcsv2.responseText);
 
 // csvから連想配列に変換する関数
 function csvToArray1(str) {
@@ -133,7 +139,7 @@ function filterButtons() {
   checkedTypes.push("AUTO");
   const event1N = Math.min(5, parseInt(event1Input.value)); //特効枚数
   const event2N = Math.min(5, parseInt(event2Input.value)); //準特効枚数
-  const eventlist = eventData[event1N][event2N];
+  const eventlist = event3Input.checked ? eventData[event1N][event2N] : eventData2[event1N][event2N];
 
   const align = alignCheckbox.checked;
   const allButtons = document.querySelectorAll(".button-area button");
@@ -229,6 +235,7 @@ targetInput.addEventListener("input", calculateRemaining);
 currentInput.addEventListener("input", calculateRemaining);
 event1Input.addEventListener("input", filterButtons);
 event2Input.addEventListener("input", filterButtons);
+event3Input.addEventListener("change", filterButtons);
 filterCheckboxes.forEach((checkbox) =>
   checkbox.addEventListener("change", filterButtons)
 );
