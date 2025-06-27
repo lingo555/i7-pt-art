@@ -2,6 +2,7 @@ const targetInput = document.getElementById("target");
 const currentInput = document.getElementById("current");
 const event1Input = document.getElementById("event1");
 const event2Input = document.getElementById("event2");
+const event3Input = document.getElementById("event3");
 const remaining = document.getElementById("remaining");
 const alignCheckbox = document.getElementById("align");
 const filterCheckboxes = document.querySelectorAll(".filter-area input");
@@ -138,7 +139,7 @@ function filterButtons() {
   checkedTypes.push("AUTO");
   const event1N = Math.min(5, parseInt(event1Input.value)); //特効枚数
   const event2N = Math.min(5, parseInt(event2Input.value)); //準特効枚数
-  const eventlist = eventData[event1N][event2N];
+  const eventlist = event3Input.checked ? eventData[event1N][event2N] : eventData2[event1N][event2N];
   // ここを変更して、復刻有無のリストを適用する
 
   const align = alignCheckbox.checked;
