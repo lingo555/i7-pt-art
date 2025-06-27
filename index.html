@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 
 <head>
@@ -38,6 +39,10 @@
           <div class="input-text2">
             <div>準特効所持枚数</div>
             <input type="tel" id="event2" value=0>
+          </div>
+          <div class="input-text2">
+            <div>準々特効有無<div class="foricon"><i class="fas fa-question-circle"></i></div></div>
+            <input type="checkbox" id="event3" checked>
           </div>
         </div>
         <form name="filter">
@@ -115,8 +120,12 @@
       <div>特効・準特効枚数の記入</div>
       特効と準特効の所持枚数（<strong>フレンド抜き</strong>）から、<br>組み合わせ上実現不可能な特効倍率を除外します。<br><br>
       ※5枚以上所持の場合は「5」と記入してください。<br>
-      ※準々特効は5枚以上所持しているとします。<br>
-      ※フレンドから特効・準特効・準々特効のいずれも<br>　借りられるとします。
+      ※フレンドから各種特効のいずれも<br>　借りられるとします。
+    </div>
+    <div class="detail-text">
+      <div>準々特効の有無</div>
+      累計イベントの<strong>復刻イベント</strong>において、準々特効が<br>存在しないため<strong>チェックを外して</strong>ください。<br><br>
+      準々特効あり時、5枚以上所持しているとします。
     </div>
     <div class="detail-text">
       <div>計算基準と注意事項</div>
@@ -340,3 +349,4 @@
 </body>
 
 </html>
+
