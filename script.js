@@ -236,6 +236,7 @@ targetInput.addEventListener("input", calculateRemaining);
 currentInput.addEventListener("input", calculateRemaining);
 event1Input.addEventListener("input", filterButtons);
 event2Input.addEventListener("input", filterButtons);
+event3Input.addEventListener("input", filterButtons);
 filterCheckboxes.forEach((checkbox) =>
   checkbox.addEventListener("change", filterButtons)
 );
