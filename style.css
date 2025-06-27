@@ -166,8 +166,8 @@ tr:nth-child(odd) td {
 }
 .input-text2 > input[type="checkbox"] {
   position: relative;
-  width: 1.1em;
-  height: 1.1em;
+  width: 1.2em;
+  height: 1.2em;
   border: 1px solid #767676;
   background: #f7f7f7;
   border-radius: 0;
