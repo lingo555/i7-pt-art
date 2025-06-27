@@ -140,7 +140,6 @@ function filterButtons() {
   const event1N = Math.min(5, parseInt(event1Input.value)); //特効枚数
   const event2N = Math.min(5, parseInt(event2Input.value)); //準特効枚数
   const eventlist = event3Input.checked ? eventData[event1N][event2N] : eventData2[event1N][event2N];
-  // ここを変更して、復刻有無のリストを適用する
 
   const align = alignCheckbox.checked;
   const allButtons = document.querySelectorAll(".button-area button");
