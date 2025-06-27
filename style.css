@@ -164,6 +164,31 @@ tr:nth-child(odd) td {
 .input-text2 > input[type="tel"] {
   width: 3.9em;
 }
+.input-text2 > input[type="checkbox"] {
+  /margin: 0;
+}
+.input-text2 > input[type="checkbox"] {
+  position: relative;
+  width: 1.1em;
+  height: 1.1em;
+  border: 1px solid #000;
+  background: #f7f7f7;
+  vertical-align: -0.4em;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.input-text2 > input[type="checkbox"]:checked:before {
+  position: absolute;
+  top: 0em;
+  left: 0.3em;
+  transform: rotate(50deg);
+  width: 0.3em;
+  height: 0.6em;
+  border-right: 3px solid #f38cb1;
+  border-bottom: 3px solid #f38cb1;
+  content: '';
+}
 .input-area {
   padding: 5px;
   margin: 5px 0;
@@ -181,7 +206,7 @@ tr:nth-child(odd) td {
   margin: -5px 0;
 }
 
-input[type="checkbox"] {
+.filter-area input[type="checkbox"] {
   display: none;
 }
 .check-label {
@@ -194,6 +219,7 @@ input[type="checkbox"] {
   line-height: 1.2em;
   padding: 2px 5px;
   font-size: 0.8em;
+  cursor: pointer;
 }
 input[type="checkbox"]:checked + .check-label {
   background: #f38cb1;
@@ -262,6 +288,7 @@ input[type="radio"] {
   padding: 2px 0;
   font-size: 0.8em;
   margin: 0 2px;
+  cursor: pointer;
 }
 .radio-label > span {
   font-size: 0.9em;
