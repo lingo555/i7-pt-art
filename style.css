@@ -173,6 +173,7 @@ tr:nth-child(odd) td {
   height: 1.1em;
   border: 1px solid #000;
   background: #f7f7f7;
+  border-radius: 0;
   vertical-align: -0.4em;
   -webkit-appearance: none;
      -moz-appearance: none;
