@@ -16,7 +16,7 @@ const cancelButton = document.getElementById("cancel");
 
 // ボタンデータ
 const buttoncsv = new XMLHttpRequest();
-buttoncsv.open("GET", "button.csv", false);
+buttoncsv.open("GET", "button.csv", false); // falseで読み込み完了まで待つ
 buttoncsv.send();
 const buttonData = csvToArray1(buttoncsv.responseText);
 
